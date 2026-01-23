@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/j2hKXk2j/18835-256x256x4-(1).png">
+    <meta charset="UTF-8">
+    <title>Windows XP</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: #fff;
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+        }
+
+        .cmd {
+            padding: 15px;
+            white-space: pre-line;
+        }
+
+        .blink {
+            animation: blink 1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cmd">
+Microsoft(R) Windows XP(TM)
+(C) Copyright 1985-2001 Microsoft Corp.
+
+BIOS Version 6.00PG
+Memory Test : 524288K OK
+
+Detecting IDE Primary Master  ... OK
+Detecting IDE Primary Slave   ... None
+Detecting IDE Secondary Master... OK
+Detecting IDE Secondary Slave ... None
+
+Loading system files...
+Initializing hardware...
+Starting Windows...
+
+<span>Press ENTER to start</span><span class="blink">_</span>
+</div>
+
+<script>
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        window.location.href = "loading.html";
+    }
+});
+
+document.addEventListener("touchstart", function() {
+    window.location.href = "loading.html";
+});
+</script>
+
+</body>
+</html>

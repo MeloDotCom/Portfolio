@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internet Explorer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      user-select: none;
+      height: 100%;
+      overflow: hidden; /* impede barras de rolagem internas */
+    }
+
+    body {
+      font-family: 'Tahoma', 'MS Sans Serif', Arial, sans-serif;
+      background: #ECE9D8;
+      min-height: 0; /* para funcionar bem com flex */
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .menu-bar {
+      background: #F1EFE2;
+      padding: 2px 5px;
+      border-bottom: 1px solid #919B9C;
+      font-size: 11px;
+      display: flex;
+      gap: 2px;
+    }
+
+    .menu-item {
+      padding: 3px 8px;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    .menu-item:hover {
+      background: #B6BDD2;
+      border: 1px solid #0A246A;
+      padding: 2px 7px;
+    }
+
+    .toolbar {
+      background: linear-gradient(to bottom, #F1EFE2 0%, #E4E2D5 50%, #D6D3CE 100%);
+      padding: 4px 6px;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      border-bottom: 1px solid #919B9C;
+    }
+
+    .toolbar-button {
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 3px 5px;
+      cursor: pointer;
+      font-size: 11px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      border-radius: 2px;
+      min-width: 50px;
+    }
+
+    .toolbar-button:hover {
+      border: 1px solid #0A246A;
+      background: linear-gradient(to bottom, #FEFEFE 0%, #D6E9F8 50%, #A9D1F5 100%);
+    }
+
+    .toolbar-button:active {
+      background: linear-gradient(to bottom, #A9D1F5 0%, #D6E9F8 100%);
+    }
+
+    .toolbar-button:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+
+    .toolbar-button:disabled:hover {
+      border: 1px solid transparent;
+      background: transparent;
+    }
+
+    .btn-icon {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .btn-label {
+      font-size: 10px;
+      color: #000;
+    }
+
+    .separator {
+      width: 1px;
+      height: 30px;
+      background: #919B9C;
+      margin: 0 2px;
+    }
+
+    .address-bar-section {
+      background: linear-gradient(to bottom, #F1EFE2 0%, #E4E2D5 50%, #D6D3CE 100%);
+      padding: 4px 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border-bottom: 1px solid #919B9C;
+    }
+
+    .address-label {
+      font-size: 11px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .address-combo {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      background: white;
+      border: 1px solid #7F9DB9;
+      height: 22px;
+    }
+
+    .address-icon {
+      padding: 0 5px;
+      font-size: 14px;
+      background: linear-gradient(to bottom, #FEFEFE 0%, #E8E8E8 100%);
+      border-right: 1px solid #7F9DB9;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .address-input {
+      flex: 1;
+      background: white;
+      border: none;
+      padding: 2px 5px;
+      font-size: 11px;
+      font-family: 'Tahoma', Arial, sans-serif;
+      outline: none;
+    }
+
+    .address-dropdown {
+      width: 18px;
+      height: 100%;
+      background: linear-gradient(to bottom, #FEFEFE 0%, #E8E8E8 100%);
+      border-left: 1px solid #7F9DB9;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+
+    .address-dropdown:hover {
+      background: linear-gradient(to bottom, #FEFEFE 0%, #D6E9F8 100%);
+    }
+
+    .go-button {
+      background: linear-gradient(to bottom, #FEFEFE 0%, #E8E8E8 100%);
+      border: 1px solid #7F9DB9;
+      padding: 3px 18px;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: bold;
+      border-radius: 2px;
+      height: 22px;
+    }
+
+    .go-button:hover {
+      background: linear-gradient(to bottom, #FEFEFE 0%, #D6E9F8 100%);
+    }
+
+    .go-button:active {
+      background: linear-gradient(to bottom, #D6E9F8 0%, #FEFEFE 100%);
+    }
+
+    .links-bar {
+      background: linear-gradient(to bottom, #F1EFE2 0%, #E4E2D5 50%, #D6D3CE 100%);
+      padding: 3px 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid #919B9C;
+      font-size: 11px;
+    }
+
+    .links-label {
+      font-weight: bold;
+      color: #000;
+    }
+
+    .link-item {
+      padding: 2px 8px;
+      cursor: pointer;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .link-item:hover {
+      background: linear-gradient(to bottom, #FEFEFE 0%, #D6E9F8 100%);
+      border: 1px solid #0A246A;
+      padding: 1px 7px;
+    }
+
+    .link-icon {
+      font-size: 14px;
+    }
+
+    .content-area {
+      flex: 1;
+      background: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content-area iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .status-bar {
+      background: linear-gradient(to bottom, #F1EFE2 0%, #E4E2D5 100%);
+      border-top: 1px solid #FFFFFF;
+      padding: 2px 5px;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 22px;
+    }
+
+    .status-section {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .status-panel {
+      border-left: 1px solid #808080;
+      border-right: 1px solid #FFFFFF;
+      padding: 0 8px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    .status-icon {
+      font-size: 14px;
+    }
+
+    .security-zone {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid #808080;
+      padding: 1px 8px;
+      border-radius: 2px;
+      background: #FEFEFE;
+    }
+  </style>
+</head>
+<body>
+  <!-- Menu -->
+  <div class="menu-bar">
+    <div class="menu-item">Arquivo</div>
+    <div class="menu-item">Editar</div>
+    <div class="menu-item">Exibir</div>
+    <div class="menu-item">Favoritos</div>
+    <div class="menu-item">Ferramentas</div>
+    <div class="menu-item">Ajuda</div>
+  </div>
+
+  <!-- Barra de Ferramentas -->
+  <div class="toolbar">
+    <button class="toolbar-button" id="back" disabled>
+      <div class="btn-icon">◄</div>
+      <div class="btn-label">Voltar</div>
+    </button>
+    <button class="toolbar-button" id="forward" disabled>
+      <div class="btn-icon">►</div>
+      <div class="btn-label">Avançar</div>
+    </button>
+    <button class="toolbar-button" id="stop">
+      <div class="btn-icon">✕</div>
+      <div class="btn-label">Parar</div>
+    </button>
+    <button class="toolbar-button" id="refresh">
+      <div class="btn-icon">↻</div>
+      <div class="btn-label">Atualizar</div>
+    </button>
+    <button class="toolbar-button" id="home">
+      <div class="btn-icon">🏠</div>
+      <div class="btn-label">Início</div>
+    </button>
+
+    <div class="separator"></div>
+
+    <button class="toolbar-button" id="search">
+      <div class="btn-icon">🔍</div>
+      <div class="btn-label">Pesquisar</div>
+    </button>
+    <button class="toolbar-button" id="favorites">
+      <div class="btn-icon">⭐</div>
+      <div class="btn-label">Favoritos</div>
+    </button>
+    <button class="toolbar-button" id="history">
+      <div class="btn-icon">📋</div>
+      <div class="btn-label">Histórico</div>
+    </button>
+
+    <div class="separator"></div>
+
+    <button class="toolbar-button" id="mail">
+      <div class="btn-icon">✉️</div>
+      <div class="btn-label">Email</div>
+    </button>
+    <button class="toolbar-button" id="print">
+      <div class="btn-icon">🖨️</div>
+      <div class="btn-label">Imprimir</div>
+    </button>
+  </div>
+
+  <!-- Barra de Endereço -->
+  <div class="address-bar-section">
+    <span class="address-label">Endereço</span>
+    <div class="address-combo">
+      <div class="address-icon">📄</div>
+      <p type="text" class="address-input" style="user-select: all;">https://blog.caua-melo-portela.website</p>
+      <div class="address-dropdown">▼</div>
+    </div>
+    <button class="go-button" id="go">Ir</button>
+  </div>
+
+  <!-- Barra de Links -->
+  <div class="links-bar">
+    <span class="links-label">Links »</span>
+    <div class="link-item">
+      <span class="link-icon">🔗</span>
+      <span>MSN.com</span>
+    </div>
+    <div class="link-item">
+      <span class="link-icon">🌐</span>
+      <span>Windows Update</span>
+    </div>
+  </div>
+
+  <!-- Área de Conteúdo -->
+  <div class="content-area">
+    <iframe src="site/site.html"></iframe>
+  </div>
+
+  <!-- Barra de Status -->
+  <div class="status-bar">
+
+  </div>
+
+  <script>
+    const refreshBtn = document.getElementById('refresh');
+    const stopBtn = document.getElementById('stop');
+    const homeBtn = document.getElementById('home');
+    const iframe = document.querySelector('.content-area iframe');
+  </script>
+</body>
+</html>

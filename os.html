@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/j2hKXk2j/18835-256x256x4-(1).png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows XP</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="windowsXP">
+  <div class="area-de-trabalho">
+    <div id="computer" class="desktop-icon" data-janela="janela-computer">
+      <img src="https://i.postimg.cc/0yKfZ2Cq/8of7shdh8kbf8dafl19n2i6b4r-453c9da1ecb6dcb7214d8f98206dfb62.png" alt="janela-computer">
+      <span>Meu Computador</span>
+    </div>
+    <div id="lixeira" class="desktop-icon" data-janela="janela-lixeira">
+      <img src="https://i.postimg.cc/W3q0w1pN/pngegg.png" alt="Lixeira">
+      <span>Lixeira</span>
+    </div>
+    <div id="ie" class="desktop-icon" data-janela="janela-ie">
+      <img src="https://files.tecnoblog.net/wp-content/uploads/2009/03/internet-explorer-8.png" alt="Internet Explorer">
+      <span>Internet Explorer</span>
+    </div>
+    <div id="linkedin" class="desktop-icon">
+      <img src="https://i.postimg.cc/25JHLwGB/aaa.png" alt="LinkedIn">
+      <span>LinkedIn</span>
+    </div>
+    <div id="github" class="desktop-icon">
+      <img src="https://i.postimg.cc/v86mnZYW/githubbb.png" alt="GitHub">
+      <span>GitHub</span>
+    </div>
+    <div id="itch" class="desktop-icon">
+      <img src="https://i.postimg.cc/Hk0cystN/itch-io.png" alt="Itch">
+      <span>Itch</span>
+    </div>
+    <!-- Janelas -->
+    <div id="janela-lixeira" class="janela" style="width: 600px; height: 400px; left: 10%; top: 10%;">
+      <div class="barra-titulo">
+        <div class="titulo-texto">
+          <img src="https://i.postimg.cc/W3q0w1pN/pngegg.png" alt="Lixeira">
+          <span>Lixeira</span>
+        </div>
+        <div class="controles-janela">
+          <button class="btn-janela btn-minimizar"></button>
+          <button class="btn-janela btn-maximizar"></button>
+          <button class="btn-janela btn-fechar"></button>
+        </div>
+      </div>
+      <div class="conteudo-janela">
+        <h2>Lixeira</h2>
+        <p>A lixeira está vazia.</p>
+      </div>
+    </div>
+    <div id="janela-computer" class="janela" style="width: 600px; height: 400px; left: 10%; top: 10%;">
+      <div class="barra-titulo">
+        <div class="titulo-texto">
+          <img src="https://i.postimg.cc/0yKfZ2Cq/8of7shdh8kbf8dafl19n2i6b4r-453c9da1ecb6dcb7214d8f98206dfb62.png" alt="Meu Computador">
+          <span>Meu Computador</span>
+        </div>
+        <div class="controles-janela">
+          <button class="btn-janela btn-minimizar"></button>
+          <button class="btn-janela btn-maximizar"></button>
+          <button class="btn-janela btn-fechar"></button>
+        </div>
+      </div>
+      <div class="conteudo-janela">
+        <h2>Meu Computador</h2>
+        <p>Este site foi desenvolvido por Cauã Melo Portela.<br><br><br><br><br>:D</p>
+        <br>
+      </div>
+    </div>
+    <div id="janela-ie" class="janela" style="width: 800px; height: 600px; left: 25%; top: 5%;">
+      <div class="barra-titulo">
+        <div class="titulo-texto">
+          <img src="https://files.tecnoblog.net/wp-content/uploads/2009/03/internet-explorer-8.png" alt="">
+          <span>Internet Explorer</span>
+        </div>
+        <div class="controles-janela">
+          <button class="btn-janela btn-minimizar"></button>
+          <button class="btn-janela btn-maximizar"></button>
+          <button class="btn-janela btn-fechar"></button>
+        </div>
+      </div>
+      <div class="conteudo-janela">
+        <iframe src="janelas/windowsie.html" width="100%" height="100%" scrolling="no" class="site-iframe" style="overflow:hidden;border:none;display:block"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div id="menuIniciar">
+    <div class="topoIniciar">
+      <div class="avatarIniciar"></div>
+      <h2 class="usuarioIniciar">Cauã Melo Portela</h2>
+    </div>
+    <div class="meioIniciar">
+      <div class="col" style="background-image: linear-gradient(to left, #95bdee 1px, #ffffff 1px, transparent 1px); padding: 3px 4px 3px 3px;">
+        <div class="itemIniciar" data-janela="janela-ie">
+          <img class="iconIniciar" src="https://files.tecnoblog.net/wp-content/uploads/2009/03/internet-explorer-8.png">
+          <span><strong>Internet</strong><br>Internet Explorer</span>
+        </div>
+        <div class="itemIniciar" data-janela="janela-linkedin">
+          <img class="iconIniciar" src="https://i.postimg.cc/25JHLwGB/aaa.png">
+          <span><strong>LinkedIn</strong><br>LinkedIn</span>
+        </div>
+        <div class="itemIniciar" data-janela="janela-github">
+          <img class="iconIniciar" src="https://i.postimg.cc/v86mnZYW/githubbb.png">
+          <span><strong>GitHub</strong><br>GitHub</span>
+        </div>
+        <div class="itemIniciar" data-janela="janela-itch">
+          <img class="iconIniciar" src="https://i.postimg.cc/Hk0cystN/itch-io.png">
+          <span><strong>Itch</strong><br>Itch.io</span>
+        </div>
+      </div>
+      <div class="col" style="background: #d3e5fa; margin-right: 3px; padding: 3px 3px 3px 3px;">
+        <div class="itemIniciar" data-janela="janela-computer">
+          <img class="iconIniciar" src="https://i.postimg.cc/0yKfZ2Cq/8of7shdh8kbf8dafl19n2i6b4r-453c9da1ecb6dcb7214d8f98206dfb62.png">
+          <span><strong>Computador</strong><br>Meu Computador</span>
+        </div>
+        <div class="separarIniciar"></div>
+        <div class="itemIniciar" data-janela="janela-lixeira">
+          <img class="iconIniciar" src="https://i.postimg.cc/W3q0w1pN/pngegg.png">
+          <span><strong>Lixeira</strong><br>Ver itens da lixeira</span>
+        </div>
+        <div class="separarIniciar"></div>
+        <div class="separardesligarIniciar"></div>
+        <div id="desligar" class="desligarIniciar">
+          <img class="icondesligarIniciar" src="https://i.postimg.cc/66jMp3kM/vecteezy-shutdown-or-deactivate-button-i-20260105165801.png">
+          <span>Desligar...</span>
+          <audio id="shutdownSound" src="sons/preview_4.mp3"></audio>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </div>
+
+  <div id = "barra-de-tarefas" class="barra-de-tarefas">
+    <button id="iniciar">
+      &nbsp;
+      <img class="icone-windows" width="30" src="https://icons.iconarchive.com/icons/tatice/operating-systems/128/Windows-icon.png" alt="Windows">
+      &nbsp;
+      <i>Iniciar</i>
+    </button>
+    <div class="janelas-abertas"></div>
+    <div class="area-de-notificacao">
+      <div style= "margin-left: 18px;" class="icon" id="volume"></div>
+      <div style= "margin-left: 0px;" class="icon" id="seguranca"></div>
+      <div id="relogio">--:--:--</div>
+    </div>
+  </div>
+</div>
+<div id="fadeOverlay"></div>
+</body>
+<audio id = "startupSound" src="sons/windows-xp-startup.mp3"></audio>
+<audio id = "closeSound" src="sons/windows-xps-error-1.mp3"></audio>
+
+<script>
+  window.addEventListener('load', () => {
+    const som = document.getElementById('startupSound');
+    startupSound.volume = 0.85;
+    som.play().catch(() => {
+    });
+  });
+</script>
+<script>
+  const clickIconL = document.getElementById('linkedin');
+  const clickIconG = document.getElementById('github');
+  const clickIconI = document.getElementById('itch');
+
+  clickIconL.addEventListener('dblclick', () => {
+    window.open('https://www.linkedin.com/in/cauã-melo-portela/', '_blank');
+  });
+  clickIconG.addEventListener('dblclick', () => {
+    window.open('https://github.com/MeloDotCom', '_blank');
+  });
+  clickIconI.addEventListener('dblclick', () => {
+    window.open('https://melodotcom.itch.io', '_blank');
+  });
+</script>
+<script>
+  const desligar = document.getElementById("desligar");
+  const overlay = document.getElementById("fadeOverlay");
+  const som = document.getElementById("shutdownSound");
+
+  desligar.addEventListener("click", () => {
+    // ativa o fade
+    overlay.classList.add("active");
+
+    // toca o som
+    som.currentTime = 0;
+    som.play();
+
+    // quando o som terminar, troca de página
+    som.onended = () => {
+      window.location.href = "index.html";
+    };
+  });
+</script>
+
+<script src="script.js" defer></script>
+</html>

@@ -1,0 +1,250 @@
+#blog{
+    margin: auto;
+}
+
+
+#fire {
+  position: absolute;   /* agora preso ao header */
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border-radius: 50px;   /* ← recorte dos cantos */
+  overflow: hidden;   
+  
+  width: 800px;
+  height: 120px;
+
+  background-image: url("https://blob.gifcities.org/gifcities/2DB5XFT7TG7Z4HOL57OTXLPOH572VXPK.gif");
+  background-repeat:  no-repeat;
+  background-size: 800px 60px;  
+  background-position: center;
+  pointer-events: none; /* não bloqueia cliques */
+}
+
+#dinosaur {
+  z-index: 999;
+  top: -250px;
+  left: -400px;
+  transform: rotate(-15deg);
+  
+  
+  position: absolute;   /* agora preso ao header */
+  
+  width: 100%;
+  height: 100%;
+
+  background-image: url("https://web.archive.org/web/20090727185342if_/http://us.geocities.com/mrmikedinosaurs/dino2.gif");
+  background-repeat:  no-repeat;
+  background-position: center;
+  pointer-events: none; /* não bloqueia cliques */
+}
+
+:root {
+  /* CORES PRINCIPAIS */
+  --bg-main: #000000;
+  --bg-panel: #0a0a0a;
+  --bg-highlight: #1a1a1a;
+
+  /* NEON / DESTAQUE */
+  --pink-neon: #ff00aa;
+  --cyan-neon: #00ffff;
+  --green-neon: #00ff00;
+  --yellow-neon: #ffff00;
+  --red-neon: #ff0000;
+
+  /* TEXTO */
+  --text-main: #ffffff;
+  --text-muted: #c0c0c0;
+  --text-invert: #000000;
+
+}
+
+.nada {
+    display: flex;
+    padding-top: 50px;
+    width: 100%;
+    height: 20px;
+}
+
+body {
+  display: flex;
+  padding-top: 50px;
+  justify-content: center;
+  align-items: center ;
+  min-height: 100vh;
+  background-image: url("https://blob.gifcities.org/gifcities/2SZ3BVB3HUFJRM5CT6JOBGUFO4QGCQJ7.gif");
+  background-repeat: repeat;
+  
+}
+
+.header{
+  position: relative; /* IMPORTANTE */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #245edb;
+  border: 4px ridge #45d356;
+  background: linear-gradient(
+    to bottom,
+    #245edb 0%,
+    #0c8dea 9%,
+    #245edb 18%,
+    #245edb 92%,
+    #333 100%    
+  );
+}
+
+.header img{    
+  
+}
+
+.content {
+  position: relative;
+  box-shadow: 0 0 30px #45d356;
+  display: flex;
+  flex-direction: column;
+  margin-top: 6%;
+  width: 800px;
+  height: 600px;
+  background: transparent;
+  border: 4px ridge #245edb;
+  border-radius: 10px;
+}
+
+/* =========================
+   HEADER CONTENT
+========================= */
+.headercontet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  background: linear-gradient(
+    to bottom,
+    #245edb 0%,
+    #0c8dea 9%,
+    #245edb 18%,
+    #245edb 92%,
+    #333 100%
+  );
+  border-bottom: 0px;
+}
+
+.headercontet h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  color: #45d356;;
+}
+
+.content-body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 10px;
+  padding: 10px;
+
+  height: calc(600px - 70px); /* ALTURA FIXA REAL */
+  box-sizing: border-box;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* espaço entre os blocos */
+}
+
+.left1 {
+  height: 100%;
+  border-radius: 5px;
+  border: 4px ridge #45d356;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+}
+
+.left1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* corta sem distorcer */
+  display: block;
+}
+
+.left2 {
+  background: linear-gradient(
+  to bottom,
+  rgba(36, 94, 219, 0.4),
+  rgba(69, 211, 86, 0.4)
+);
+  color: white;
+  height: 100%;
+  border-radius: 5px;
+  border: 4px ridge #45d356;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+.left2 p{
+  margin-left: 15px
+}
+
+.left img {
+  width: 180px;
+  border: 2px solid var(--border-main);
+  box-shadow: var(--glow-cyan);
+}
+
+.nome {
+  color: var(--text-main);
+  font-weight: bold;
+  text-shadow: var(--glow-pink);
+}
+
+/* =========================
+   DIREITA (TEXTO COM SCROLL)
+========================= */
+.right {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 20px;
+  color: var(--text-main);
+  border-radius: 5px;
+  border: 4px ridge #45d356;
+  background: var(--bg-panel);
+  gap: 8px;
+}
+.right p{
+  text-indent: 20px;
+  margin-top: 0;
+  font-size: 18px;
+  text-align: justify;
+}
+
+/* =========================
+   SCROLLBAR RETRÔ
+========================= */
+.right::-webkit-scrollbar {
+  width: 10px;
+}
+
+.right::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+  
+}
+
+.right::-webkit-scrollbar-thumb {
+  background: #245edb;
+  border-radius: 10px;
+  margin-right: 10px;
+  border: 4px solid #000; /* cria o “respiro” */
+}
