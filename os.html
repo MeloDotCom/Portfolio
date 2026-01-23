@@ -20,6 +20,10 @@
       <img src="https://i.postimg.cc/W3q0w1pN/pngegg.png" alt="Lixeira">
       <span>Lixeira</span>
     </div>
+    <div id="curriculo" class="desktop-icon" data-janela="janela-curriculo">
+      <img src="documento\icon pdf.png" alt="pdf">
+      <span>Curriculo</span>
+    </div>
     <div id="ie" class="desktop-icon" data-janela="janela-ie">
       <img src="https://files.tecnoblog.net/wp-content/uploads/2009/03/internet-explorer-8.png" alt="Internet Explorer">
       <span>Internet Explorer</span>
@@ -168,6 +172,7 @@
   const clickIconL = document.getElementById('linkedin');
   const clickIconG = document.getElementById('github');
   const clickIconI = document.getElementById('itch');
+  const clickIconC = document.getElementById('curriculo');
 
   clickIconL.addEventListener('dblclick', () => {
     window.open('https://www.linkedin.com/in/cauã-melo-portela/', '_blank');
@@ -177,6 +182,9 @@
   });
   clickIconI.addEventListener('dblclick', () => {
     window.open('https://melodotcom.itch.io', '_blank');
+  });
+  clickIconC.addEventListener('dblclick', () => {
+    window.open('documento/Currículo - Cauã Melo Protela.pdf', '_blank');
   });
 </script>
 <script>

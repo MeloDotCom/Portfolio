@@ -1,6 +1,6 @@
 *{
       box-sizing: border-box;
-      filter: blur(0.1px);
+      filter: blur(0.2px);
       text-shadow: 0 0 2px rgba(0,255,0,0.15);
 }
      body {
